@@ -1,0 +1,32 @@
+<html ng-app="countryApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular.js JSON Fetching Example</title>
+	<script src="angular.min.js"></script>
+    <script>
+      var countryApp = angular.module('countryApp', []);
+      countryApp.controller('CountryCtrl', function ($scope, $http){
+        $http.get('http://localhost:8080/Spring4MVCCRUDRestService/user/').success(function(data) {
+          $scope.countries = data;
+        });
+      });
+    </script>
+  </head>
+  <body ng-controller="CountryCtrl">
+	<h2>Angular.js JSON Fetching Example</h2>
+    <table>
+      <tr>
+        <th>Id</th>
+		<th>Name</th>
+        <th>Age</th>
+        <th>Salary</th>
+      </tr>
+      <tr ng-repeat="country in countries | orderBy: 'id' ">
+        <td>{{country.id}}</td>
+		<td>{{country.name}}</td>
+        <td>{{country.age}}</td>
+        <td>{{country.salary}}</td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+[
+  {
+    "code": "IN",
+    "name": "India",
+    "population": "70000"
+  },
+  
+ {
+    "code": "US",
+    "name": "United States Of America",
+    "population": "50000"
+  },
+  
+  {
+    "code": "CA",
+    "name": "Canada",
+    "population": "30000"
+  }
+]
